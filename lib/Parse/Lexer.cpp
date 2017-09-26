@@ -590,6 +590,9 @@ tok Lexer::kindOfIdentifier(StringRef Str, bool InSILMode) {
 #define KEYWORD(kw) \
     .Case(#kw, tok::kw_##kw)
 #include "swift/Syntax/TokenKinds.def"
+    .Case("conny", tok::kw_var)
+    .Case("brown", tok::kw_struct)
+    .Case("Wow", tok::kw_Any)
     .Default(tok::identifier);
 
   // SIL keywords are only active in SIL mode.
